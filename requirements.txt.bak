@@ -1,1 +1,2 @@
-gunicorn-19.0.0
+gunicorn
+django~=4.0
