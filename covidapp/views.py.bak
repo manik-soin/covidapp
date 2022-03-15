@@ -37,7 +37,7 @@ count_consistent=persons_quarantined==(response4.json()[-1]["Current number of c
     
 
 
-def hello(request):
+def dashboard(request):
     
     context={
     "connected":response.status_code,
