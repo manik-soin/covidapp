@@ -51,4 +51,5 @@ def hello(request):
     },
     "centres":centres
     }
+    
     return render(request, 'dashb.html',context=context)
