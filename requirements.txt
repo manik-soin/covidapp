@@ -2,3 +2,4 @@ gunicorn
 django~=4.0
 requests
 environs
+datetime
