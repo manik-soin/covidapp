@@ -12,7 +12,7 @@ dateurl="https://api.data.gov.hk/v2/filter?q=%7B%22resource%22%3A%22http%3A%2F%2
 response = requests.get(dateurl)
 #print(response.status_code)
 date=response.json()[-1]['As of date']
-date_time_obj = datetime.strptime(date, '%d/%m/%y')
+date_time_obj = datetime.strptime(date, '%d/%m/%Y')
 has_data=(previous_date<date_time_obj)
 specificdateurl ="https://api.data.gov.hk/v2/filter?q=%7B%22resource%22%3A%22http%3A%2F%2Fwww.chp.gov.hk%2Ffiles%2Fmisc%2Foccupancy_of_quarantine_centres_eng.csv%22%2C%22section%22%3A1%2C%22format%22%3A%22json%22%2C%22filters%22%3A%5B%5B1%2C%22eq%22%2C%5B%22"+date[0:2]+"%2F"+date[3:5]+"%2F"+date[6:]+"%22%5D%5D%5D%7D"
 

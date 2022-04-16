@@ -29,7 +29,7 @@ for i in range(len(response2.json())):
 top3url="https://api.data.gov.hk/v2/filter?q=%7B%22resource%22%3A%22http%3A%2F%2Fwww.chp.gov.hk%2Ffiles%2Fmisc%2Foccupancy_of_quarantine_centres_eng.csv%22%2C%22section%22%3A1%2C%22format%22%3A%22json%22%2C%22sorts%22%3A%5B%5B8%2C%22desc%22%5D%5D%2C%22filters%22%3A%5B%5B1%2C%22eq%22%2C%5B%22"+date[0:2]+"%2F"+date[3:5]+"%2F"+date[6:]+"%22%5D%5D%5D%7D"
 response3=requests.get(top3url)
 centres=[]
-for i in range(3):
+for i in range(min(3,len(response3.json()))):
     centres.append({"name":response3.json()[i]["Quarantine centres"],"units":response3.json()[i]["Ready to be used (unit)"]})
 
 api2url="https://api.data.gov.hk/v2/filter?q=%7B%22resource%22%3A%22http%3A%2F%2Fwww.chp.gov.hk%2Ffiles%2Fmisc%2Fno_of_confines_by_types_in_quarantine_centres_eng.csv%22%2C%22section%22%3A1%2C%22format%22%3A%22json%22%2C%22filters%22%3A%5B%5B1%2C%22eq%22%2C%5B%22"+date[0:2]+"%2F"+date[3:5]+"%2F"+date[6:]+"%22%5D%5D%5D%7D"
